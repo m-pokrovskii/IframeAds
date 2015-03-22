@@ -1,31 +1,32 @@
-rupture.scale        = 0 400px 600px 800px 1050px 1800px
-rupture.scale-names = 'xs' 's' 'm' 'l' 'xl' 'hd'
-va()
-	position: relative;
-	top: 50%; 
-	transform: translateY(-50%);
-		
-// 
+@import 'helpers'
+@import 'global'
+@import 'default'
+@media (min-width: 120px) and (max-width: 160px) and (min-height: 600px) and (max-height: 600px)
+	@import '120x600'
+@media (min-width: 160px) and (max-width: 160px) and (min-height: 600px) and (max-height: 600px)
+	@import '160x600'
 
-html
-	font-size 62.5% !important
-	line-height 1.8em !important
-	font-family Arial !important
-	overflow hidden
+@media (min-width: 216px) and (max-width: 320px) and (min-height: 36px) and (max-height: 50px)
+	@import '216x36'
+@media (min-width: 300px) and (max-width: 320px) and (min-height: 50px) and (max-height: 50px)
+	@import '300x50'
+@media (min-width: 320px) and (max-width: 320px) and (min-height: 50px) and (max-height: 50px)
+	@import '320x50'
 
-body
-	font-size 1em !important
-	overflow hidden
-	margin 0
-	padding 0  
-			
-.app * 
-	box-sizing border-box
-	margin 0
-	padding 0  
+@media (min-width: 468px) and (max-width: 1024px) and (min-height: 60px) and (max-height: 90px)
+	@import '468x60'
+@media (min-width: 728px) and (max-width: 1024px) and (min-height: 90px) and (max-height: 90px)
+	@import '728x90'
+@media (min-width: 1024px) and (max-width: 1024px) and (min-height: 90px) and (max-height: 90px)
+	@import '1024x90'
+
+
+@media (min-width: 300px) and (max-width: 480px) and (min-height: 250px) and (max-height: 480px)
+	@import '300x250'
+@media (min-width: 320px) and (max-width: 320px) and (min-height: 480px) and (max-height: 480px)
+	@import '320x480'
+@media (min-width: 336px) and (max-width: 336px) and (min-height: 280px) and (max-height: 280px)
+	@import '336x280'
+@media (min-width: 480px) and (max-width: 480px) and (min-height: 320px) and (max-height: 320px)
+	@import '480x320'
 	
-// elements
-
-.headline {
-	position: absolute;
-	}
