@@ -1,9 +1,3 @@
-// TODO
-
-// FONT change
-// - Refractoring
-// - Build Class new URI
-
 var APP = (function(){
 
 	var elements = {
@@ -129,6 +123,19 @@ function getMobileOperatingSystem() {
 
 			if (btn_color) {
 				elements.buttons[i].parentNode.style.backgroundColor = btn_color;
+			};
+
+			if (q.roboto_font == 1) {
+				var link, head, body;
+				link = document.createElement('link');
+				head = qs('head');
+				body = qs('body');
+
+				link.href = 'http://fonts.googleapis.com/css?family=Roboto:400,400italic,500,500italic,700';
+				link.rel  = 'stylesheet';
+				link.type = 'text/css';
+				head.appendChild(link);
+				addClass(body, 'roboto-font');
 			};
 
 			elements.app.style.display = 'block';
