@@ -2,6 +2,7 @@
 <html lang="en">
 	<head>
 		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>Index</title>
 		<style>
 			.block {
@@ -14,12 +15,14 @@
 
 		<div class="block">
 			<iframe
-			style = "border:solid 1px transparent !important; padding:0 !important; margin:0 !important;"
-			src="iframe.html?android_id=61e63949-d69a-4268-8484-c9079341ceaf&amp;ios_id=c75c15f7-6e39-4e0a-b253-99157ed19cec&amp;btn_text=Download&cat=Lifestyle&roboto_font=0"
-			width="336"
-			height="280"
+			style = "border:none !important; display:none; padding:0 !important; margin:0 !important;"
+			src="iframe.html?android_id=61e63949-d69a-4268-8484-c9079341ceaf&ios_id=c75c15f7-6e39-4e0a-b253-99157ed19cec&btn_text=Download&cat=Lifestyle&roboto_font=0"
+			width="320"
+			height="480"
+			onload = "(navigator.userAgent.match(/iPad/i) || navigator.userAgent.match(/iPhone/i) || navigator.userAgent.match(/iPod/i) || navigator.userAgent.match(/Android/i)) ? this.style.display='inline-block' : this.style.display='none'"
 			id="appnext_commercial">
 			</iframe>
+
 		</div>
 
 	</body>

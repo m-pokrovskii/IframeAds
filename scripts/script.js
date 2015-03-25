@@ -77,11 +77,12 @@ function getMobileOperatingSystem() {
 
 
 	function addElements () {
-			elements.ads    = qsa('.app__item');
-			elements.titles = qsa('.title');
-			elements.descs  = qsa('.description');
-			elements.images = qsa('.image-container img');
+			elements.ads     = qsa('.app__item');
+			elements.titles  = qsa('.title');
+			elements.descs   = qsa('.description');
+			elements.images  = qsa('.image-container img');
 			elements.buttons = qsa('.button > span');
+			elements.osLogo  = qsa('.os-logo img');
 	}
 
 	function returnCountOfAd () {
@@ -107,11 +108,13 @@ function getMobileOperatingSystem() {
 
 	function replaceContent (data) {
 		var btn_text = q.btn_text,
+				mobileOS  = getMobileOperatingSystem();
 				btn_color = (q.btn_color) ? '#'+q.btn_color : "";
 		addElements();
 		data['apps'].forEach(function(el, i) {			
 			elements.titles[i].textContent = el.title;
-			elements.descs[i].textContent  = el.desc;
+			// elements.descs[i].textContent  = el.desc;
+			elements.descs[i].textContent  = 'APUS Launcher is a small, fast, and simple launcher with over 60 Million users 60 Million users.';
 			elements.images[i].setAttribute('src', el.urlImg);
 			elements.ads[i].addEventListener('click', function() {
 				window.top.location.href = el.urlApp;
@@ -123,6 +126,10 @@ function getMobileOperatingSystem() {
 
 			if (btn_color) {
 				elements.buttons[i].parentNode.style.backgroundColor = btn_color;
+			};
+
+			if (mobileOS == "iOS") {
+				elements.osLogo[i].src = "images/apstore-logo.png";
 			};
 
 			if (q.roboto_font == 1) {
