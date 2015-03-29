@@ -103,7 +103,9 @@ function getMobileOperatingSystem() {
 	}
 
 	function iframeSize () {
-		return [window.frameElement.getAttribute('width'), window.frameElement.getAttribute('height')];
+		var w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+		var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+		return [w, h];
 	}
 
 	function replaceContent (data) {
@@ -113,8 +115,7 @@ function getMobileOperatingSystem() {
 		addElements();
 		data['apps'].forEach(function(el, i) {			
 			elements.titles[i].textContent = el.title;
-			// elements.descs[i].textContent  = el.desc;
-			elements.descs[i].textContent  = 'APUS Launcher is a small, fast, and simple launcher with over 60 Million users 60 Million users.';
+			elements.descs[i].textContent  = el.desc;
 			elements.images[i].setAttribute('src', el.urlImg);
 			elements.ads[i].addEventListener('click', function() {
 				window.top.location.href = el.urlApp;
