@@ -26,7 +26,7 @@ var APP = (function(){
 		} else if (mobileOS = 'Android') {
 			id = q.android_id;
 		} else {
-			id = 'c75c15f7-6e39-4e0a-b253-99157ed19cec';
+			id = '';
 		};
 		staticURL = 'https://admin.appnext.com/offerWallApi.aspx?id='+id+'&cnt='+count+'&cat='+cat+'&pbk='+pbk+'&type=json';
 		return staticURL;
